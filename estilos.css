@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*background-color: azure;*/
+}
+
+.contenedor-total{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contenedor-aplicacion{
+    background-color: white;
+    width: 45%;
+    margin: 2% auto;
+    border: 2px solid rgb(25, 25, 141);
+    padding: 20px;
+}
+
+.contenedor-fechaActualHora{
+    width: 100%;
+    background-color: rgb(6, 6, 57);
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.valor, .tarea{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 15px;
+}
+
+.formulario-tareas{
+    display: flex;
+    justify-content: center;
+}
