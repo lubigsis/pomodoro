@@ -50,3 +50,12 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.tareasAgregadasCSS{
+    /*background-color: red;*/
+    margin: 30px;
+    padding: 20px;
+    font-size: 22px;
+    color: red;
+    letter-spacing: 1px;
+}
