@@ -122,10 +122,11 @@ body{
   
   .start-button{   /*------------------------------agregado con JS*/
     background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
-    padding: 5px;
+    padding: 7px;
     border: none;
     cursor: pointer;
     border-radius: 8px;
     color: #fff;
+    letter-spacing: 1px;
     
   }

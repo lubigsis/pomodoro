@@ -38,7 +38,35 @@ function renderizarTareas(){ //p/tomar c/u de los elementos de tasks[] y generar
   });
         const tasksContainer = document.querySelector('#tasks');
         tasksContainer.innerHTML = html.join('');
+
+/*---------------------------------------------------------------------botones------------------------------*/
+const startButtons = document.querySelectorAll('.task .start-button');
+
+startButtons.forEach(button =>{
+  button.addEventListener('click', e =>{
+    if(!timer){  //entra acá pq inicialicé la variable timer en null
+      const id = button.getAttribute('data-id');
+
+      startButtonHandler(id);
+      button.textContent = 'En progreso'
+
+    }
+  });
+});
    
+}
+
+//------------------------------------------------------------calcula los 25' de la actividad ppal.
+function startButtonHandler(id){
+       time = 25 * 60;         //25' y cada minuto tiene 60"
+       tareaActual = id;     //almacena el id de la act. actual.        
+       const taskIndex = tasks.findIndex(task => task.id === id);
+       const taskName = document.querySelector('#tiempo.JS #taskName')
+       taskName.textContent = tasks[taskIndex].title;
+
+       timer = setInterval(() => {
+        timerHandler(id);
+      }, 1000);
 }
 
 /*------------------------------------------------------------------------------------------------------*/
