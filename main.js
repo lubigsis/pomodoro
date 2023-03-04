@@ -1,61 +1,59 @@
 /*--------------------------------------------------defino variables--------------------*/
-let tasks = []; //p/almacenar las tareas q' el user escriba.
+const tasks = []; //p/almacenar las tareas q' el user escriba. Va a contener elementos q' son objetos.
 let time = 0; //p/la cuenta regresiva.
 let timer = null;
 let timerBreak = null;
 let tareaActual = null;
 
-/*-------------------------------------------------obtengo el id del form-----------------------*/
+/*-------------------------------------------------obtengo referencia de elementos HTML-----------------------*/
 
-let bAdd = document.querySelector("#bAdd.JS");
-let itTask = document.querySelector("#itTask.JS");
-let form = document.querySelector("#formulario.JS");
+const bAdd = document.getElementById("bAdd.JS");
+const itTask = document.getElementById("itTask.JS");
+const form = document.getElementById("formulario.JS");
 
 
 /*----------------------------------------------------------------------------FUNCIONES---------------*/
 
 function createTask(value){
 
-    const nuevaTarea = {
-        id: (Math.random() * 100).toString(36).slice(2),
-        titulo: value,
-        completado: false,
+    const newTask = {
+        id: (Math.random() * 100).toString(36).slice(3),
+        title: value,
+        completed: false,
     };
-
-    //lo agrego al array 'task[]'
-     tasks.unshift(nuevaTarea);
-
+    //lo agrego al array 'tasks[]'
+     tasks.unshift(newTask);
 }
 
-function renderizarTareas(){ //p/tomar c/u de los elementos de task[] y generar un HTML p/colocar en un contenedor.
 
+function renderizarTareas(){ //p/tomar c/u de los elementos de tasks[] y generar un HTML p/colocar en un contenedor.
     const html = tasks.map((task) =>  {
         return `
         <div class="task">
-            <div class="completed">${task.completado
-                ? "<span class='done'>Done</span>"
-                : `<button class="start-button" data-id="${task.id}">Start</button></div>`
-            }
-                <div class="title">${task.titulo}</div>
-        </div>`;
+            <div class="completed">${task.completed ? `<span class="done">Done</span>` : 
+            `<button class="start-button" data-id="${task.id}">Start</button>`}</div>
+            <div class="title">${task.title}</div>
+        </div>
+        `;
   });
-        const tasksContainer = document.querySelector('#tareasAgregadas.JS');
+        const tasksContainer = document.querySelector('#tasks');
         tasksContainer.innerHTML = html.join('');
    
 }
 
 /*------------------------------------------------------------------------------------------------------*/
 
-form.addEventListener('submit', e =>{
-    e.preventDefault(); /*p/q' cuando enviemos el formulario, realmente no se mande*/
 
-    if (itTask.value !== ''){
-        createTask(itTask.value);
-        itTask.value = '';
+form.addEventListener('submit', (e) =>{
+    e.preventDefault();
 
-        renderizarTareas();
+    if (itTask.value !== '') {
+      createTask(itTask.value);
+      itTask.value = '';
+
+      renderizarTareas();
     }
-})
+  });
 
 
 

@@ -12,27 +12,25 @@
 </head>
 <body>
     <div class="contenedor-total">
-
         <div class="contenedor-aplicacion" id="app.JS">
             <div class="" id="tiempo.JS">
-                <div class="valor" id="valor.JS"></div>
-                <div class="tarea" id="tarea.JS"></div>
+                <div class="valor" id="value"></div> <!--cuenta regresiva-->
+                <div class="tarea" id="taskName"></div> <!--nombre de la tarea actual-->
             </div>
-        
 
     <!----------------------------------------------------------------------formulario---------------------->
-
             <div class="contenedor-tareas">
                 <div class="formulario-tareas">
                     <form id="formulario.JS">
-                        <input type="text" id="itTask.JS">
-                        <input type="submit" id="bAdd.JS" value="Agregar tarea">
+                        <input class="input" type="text" id="itTask.JS">
+                        <input class="btn" type="submit" id="bAdd.JS" value="Agregar tarea">
                     </form>
                 </div>
     <!-----------------------------------------------------Tareas que se van creando------------------------>
-                <div id="tareasAgregadas.JS" class="tareasAgregadasCSS">
-                    <div class="task"></div>
+                <div id="tasks">  <!--acá van las tareas q' el user vaya creando-->
+                                   <!--agreago con JS (ver estilos CSS)-->
                 </div>
+
             </div>
 
         </div>
@@ -41,10 +39,10 @@
 
         <div class="contenedor-fechaActualHora">
             <div class="fecha">
-                poner fecha con js
+                fecha con js
             </div>
             <div class="hora">
-                poner hora con js
+                hora con js
             </div>
         </div>
 
@@ -53,7 +51,7 @@
 
 <!----------------------------------------------------------------------------JavaScript----------------------------->
     <script src="main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script> --> 
    <!-- <script src="canvas.js"></script>-->
 </body>
 </html>
